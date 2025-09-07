@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from selenium import webdriver
 import pytest
-from data import main_url
+from curl import main_url
 
 @pytest.fixture
 def driver():

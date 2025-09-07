@@ -17,7 +17,8 @@ class BasePage:
     
     @allure.step('Кликаем на элемент')
     def click_on_element(self, locator):
-        self.driver.find_element(*locator).click()
+        self.scroll_to_element(locator)
+        return WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable(locator)).click()
 
     @allure.step('Вводим значения')
     def send_keys_to_input(self, locator, keys):
